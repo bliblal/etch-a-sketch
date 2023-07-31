@@ -16,17 +16,20 @@ for (let i=0;i<625;i++){
     
 }
 
+let pen='active';
+
 function change(e){
-    e.target.classList.add('active');
+    e.target.classList.add(pen);
 }
 function changemove(e){
     if (mousedown){
-        e.target.classList.add('active');
+        e.target.classList.add(pen);
     }
 }
 
 function clear(){
     panels.forEach(panel => panel.classList.remove('active'));
+    pen='active';
 }
 
 
@@ -43,3 +46,7 @@ panels.forEach(panel => panel.addEventListener('mousemove', changemove));
 
 clearbutton=document.querySelector('.clearbutton');
 clearbutton.addEventListener('click',clear);
+
+eraser=document.querySelector('.eraser');
+console.log(eraser);
+eraser.addEventListener('click', () => pen='inactive');

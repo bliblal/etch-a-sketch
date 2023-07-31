@@ -1,5 +1,69 @@
+body{
+    display: flex;
+    border: 2px solid red;
+    height: 100vh;
+    background-color: #E8E8E8;
+    color: #393B44;
+    margin: 0;
+}
+
+.page{
+    flex: 1;
+    display:flex;
+    flex-direction: column;
+
+}
+
+.header{
+    flex: 2;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 2px solid red;
+
+}
+
+.body{
+    border: 2px solid red;    
+    flex: 6;
+    display: flex;
+
+}
+.displayholder{
+    flex:4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+}
+.controls{
+    flex:2;
+}
+
 .display{
     display: flex;
     flex-wrap: wrap;
-    width: 672px;
+    width: 500px;
+}
+
+.footer{
+    border: 2px solid red;
+
+    flex:1;
+}
+
+.panels{
+    box-sizing: border-box;
+    width: 20px; 
+    height: 20px; 
+    background-color: white; 
+}
+
+.active{
+    background-color: black;}
+
+.inactive{
+    background-color: white;
 }
