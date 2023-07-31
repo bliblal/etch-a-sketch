@@ -25,6 +25,10 @@ function changemove(e){
     }
 }
 
+function clear(){
+    panels.forEach(panel => panel.classList.remove('active'));
+}
+
 
 
 let mousedown=false;
@@ -35,3 +39,7 @@ panels.forEach(panel => panel.addEventListener('mouseup', () => mousedown=false)
 const page=document.querySelector('.page');
 page.addEventListener('mouseup', () => mousedown=false);
 panels.forEach(panel => panel.addEventListener('mousemove', changemove));
+
+
+clearbutton=document.querySelector('.clearbutton');
+clearbutton.addEventListener('click',clear);
