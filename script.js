@@ -1,16 +1,37 @@
-const display=document.querySelector('.display');
+const displayDiv=document.querySelector('.display');
 let grid=[];
-for (let i=0;i<256;i++){
+
+function getTileNumber(resolution){
+    tiles=(600/resolution)**2;
+    console.log(tiles);
+    return;
+
+}
+
+for (let i=0;i<625;i++){
     grid[i]= document.createElement('div');
-    grid[i].setAttribute('style','width: 40px; height: 40px; background-color: black; border: 1px solid red;');
     grid[i].classList.add('panels');
-    display.appendChild(grid[i]);
+    grid[i].classList.add('panels');
+    displayDiv.appendChild(grid[i]);
     
 }
 
 function change(e){
-    e.target.setAttribute('style','width: 40px; height: 40px; background-color: blue; border: 1px solid red;');
+    e.target.classList.add('active');
+}
+function changemove(e){
+    if (mousedown){
+        e.target.classList.add('active');
+    }
 }
 
+
+
+let mousedown=false;
 const panels= document.querySelectorAll('.panels');
-panels.forEach(panel => panel.addEventListener('mouseover', change));
+panels.forEach(panel => panel.addEventListener('click',change));
+panels.forEach(panel => panel.addEventListener('mousedown', () => mousedown=true));
+panels.forEach(panel => panel.addEventListener('mouseup', () => mousedown=false));
+const page=document.querySelector('.page');
+page.addEventListener('mouseup', () => mousedown=false);
+panels.forEach(panel => panel.addEventListener('mousemove', changemove));
