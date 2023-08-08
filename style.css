@@ -67,3 +67,11 @@ body{
 .inactive{
     background-color: white;
 }
+
+  
+input[type='color'] {
+    width: 80px;
+    height: 80px;
+    border: none;
+    background-color: #E8E8E8;
+}
